@@ -1,0 +1,17 @@
+{
+    "name": "giovani/sessionLogin",
+    "authors": [
+        {
+            "name": "Giovani Cassiano Nogueira",
+            "email": "giovani.cassiano@riosoft.com.br"
+        }
+    ],
+    "require": {
+        "nlp-tools/nlp-tools": "1.0.*@dev"
+    },
+    "autoload-dev": {
+        "psr-4":{
+            "Auth\\": "auth/"
+        }
+    }
+}
