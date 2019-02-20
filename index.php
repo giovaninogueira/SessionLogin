@@ -12,10 +12,10 @@
         Session::validate();
         echo 'menu';
     } else {
+        $login = new Login();
         if (!isset($_SERVER['PHP_AUTH_USER'])) {
             Login::authBasic();
         } else {
-            $login = new Login();
             $login->auth();
         }
     }

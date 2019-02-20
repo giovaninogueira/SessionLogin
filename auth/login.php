@@ -4,12 +4,20 @@ namespace Auth;
 
 use Auth\Session;
 
+/**
+ * Class Login
+ * @package Auth
+ */
 class Login
 {
     public function __construct()
     {
+        Session::destroy();
     }
 
+    /**
+     * Auth Basic
+     */
     public static function authBasic()
     {
         header('WWW-Authenticate: Basic realm="My Realm"');
@@ -27,9 +35,7 @@ class Login
     }
 
     /**
-     * @param string $email
-     * @param string $senha
-     * @return string
+     * @return bool
      */
     public function sign()
     {

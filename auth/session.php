@@ -2,6 +2,10 @@
 
 namespace Auth;
 
+/**
+ * Class Session
+ * @package Auth
+ */
 class Session
 {
     /**
@@ -19,6 +23,7 @@ class Session
         self::start();
         if(!isset($_SESSION['DATE_CREATED'])) {
             $_SESSION['DATE_CREATED'] = time();
+            session_regenerate_id(true);
         }
     }
 
@@ -27,7 +32,7 @@ class Session
      */
     public static function validate()
     {
-        if(time() - $_SESSION['DATE_CREATED'] < 10) {
+        if(time() - $_SESSION['DATE_CREATED'] < 1800) {
             session_regenerate_id(true);
         } else {
             ob_end_clean();
