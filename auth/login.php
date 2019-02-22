@@ -65,6 +65,7 @@ class Login
 
     public function logout($code, $msg)
     {
+        Session::destroy();
         http_response_code($code);
         $arr = [
           'msg' => $msg
